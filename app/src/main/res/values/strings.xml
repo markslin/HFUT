@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">工大宣城</string>
+    <string name="settings">设置</string>
+    <string name="night">夜间</string>
+    <string name="menu_item_1">首页</string>
+    <string name="menu_item_2">课表</string>
+    <string name="menu_item_3">成绩</string>
+    <string name="menu_item_4">图书</string>
+    <string name="menu_item_5">草稿</string>
+    <string name="menu_item_6">提问</string>
+</resources>

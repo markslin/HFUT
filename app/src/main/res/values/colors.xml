@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff6600</color>
+    <color name="colorGray">#88000000</color>
+    <color name="colorSmallText">#7b7b7b</color>
+    <color name="colorMenu">#ffffff</color>
+    <color name="colorContent">#ffffff</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorAlphaWhite">#33ffffff</color>
+    <color name="colorIconBack">#87ff6600</color>
+    <color name="colorMenuItemText">#101010</color>
+    <color name="colorLightGray">#F5F5F5</color>
+    <color name="colorPurple">#9c27b0</color>
+    <color name="colorDeepPurple">#673ab7</color>
+    <color name="colorGreen">#259b24</color>
+    <color name="colorLime">#cddc39</color>
+    <color name="colorIndigo">#3f51b5</color>
+    <color name="colorNight">#000000</color>
+</resources>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/activity_menu_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/colorIconBack"
+            android:orientation="vertical">
+
+            <cn.edu.hfut.xc.view.CircleImageView
+                android:id="@+id/menu_head_img"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:onClick="onMenuInfoClicked"
+                android:src="@drawable/icon"
+                app:border_color="@color/colorWhite"
+                app:border_width="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="@string/app_name"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/activity_main_introduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:clickable="true"
+                android:onClick="onMenuIntroduceClicked"
+                android:text="(添加一句话自我介绍)"
+                android:textColor="@color/colorAlphaWhite"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorLightGray"
+            android:orientation="vertical">
+
+            <cn.edu.hfut.xc.view.RippleView
+                android:id="@+id/activity_menu_ripple_view1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_item_height"
+                android:layout_marginTop="8dp"
+                app:rv_color="@color/colorIconBack"
+                app:rv_rippleDuration="300">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_item_height"
+                    android:gravity="center_vertical"
+                    android:onClick="onMenu1Clicked">
+
+                    <cn.edu.hfut.xc.view.ColorImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:src="@drawable/ic_drawer_home"
+                        app:src_color="#0077D9" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="@string/menu_item_1"
+                        android:textColor="@color/colorMenuItemText" />
+                </LinearLayout>
+            </cn.edu.hfut.xc.view.RippleView>
+
+            <cn.edu.hfut.xc.view.RippleView
+                android:id="@+id/activity_menu_ripple_view2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_item_height"
+                app:rv_color="@color/colorIconBack"
+                app:rv_rippleDuration="300">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_item_height"
+                    android:gravity="center_vertical"
+                    android:onClick="onMenu2Clicked">
+
+                    <cn.edu.hfut.xc.view.ColorImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:src="@drawable/ic_drawer_draft"
+                        app:src_color="#6CC800" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="@string/menu_item_2"
+                        android:textColor="@color/colorMenuItemText" />
+                </LinearLayout>
+            </cn.edu.hfut.xc.view.RippleView>
+
+            <cn.edu.hfut.xc.view.RippleView
+                android:id="@+id/activity_menu_ripple_view3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_item_height"
+                app:rv_color="@color/colorIconBack"
+                app:rv_rippleDuration="300">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_item_height"
+                    android:gravity="center_vertical"
+                    android:onClick="onMenu3Clicked">
+
+                    <cn.edu.hfut.xc.view.ColorImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:src="@drawable/ic_drawer_follow"
+                        app:src_color="#FFCC00" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="@string/menu_item_3"
+                        android:textColor="@color/colorMenuItemText" />
+                </LinearLayout>
+            </cn.edu.hfut.xc.view.RippleView>
+
+            <cn.edu.hfut.xc.view.RippleView
+                android:id="@+id/activity_menu_ripple_view4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_item_height"
+                app:rv_color="@color/colorIconBack"
+                app:rv_rippleDuration="300">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_item_height"
+                    android:gravity="center_vertical"
+                    android:onClick="onMenu4Clicked">
+
+                    <cn.edu.hfut.xc.view.ColorImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:src="@drawable/ic_drawer_collect"
+                        app:src_color="#EE7521" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="@string/menu_item_4"
+                        android:textColor="@color/colorMenuItemText" />
+                </LinearLayout>
+            </cn.edu.hfut.xc.view.RippleView>
+
+            <cn.edu.hfut.xc.view.RippleView
+                android:id="@+id/activity_menu_ripple_view5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_item_height"
+                android:visibility="gone"
+                app:rv_color="@color/colorIconBack"
+                app:rv_rippleDuration="300">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_item_height"
+                    android:gravity="center_vertical">
+
+                    <cn.edu.hfut.xc.view.ColorImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:src="@drawable/ic_drawer_draft"
+                        app:src_color="#6CC800" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="@string/menu_item_5"
+                        android:textColor="@color/colorMenuItemText" />
+                </LinearLayout>
+            </cn.edu.hfut.xc.view.RippleView>
+
+            <cn.edu.hfut.xc.view.RippleView
+                android:id="@+id/activity_menu_ripple_view6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_item_height"
+                android:visibility="gone"
+                app:rv_color="@color/colorIconBack"
+                app:rv_rippleDuration="300">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_item_height"
+                    android:gravity="center_vertical">
+
+                    <cn.edu.hfut.xc.view.ColorImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:src="@drawable/ic_drawer_question"
+                        app:src_color="#FFCC00" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:text="@string/menu_item_6"
+                        android:textColor="@color/colorMenuItemText" />
+                </LinearLayout>
+            </cn.edu.hfut.xc.view.RippleView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_item_height"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal">
+
+        <cn.edu.hfut.xc.view.RippleView
+            android:id="@+id/activity_menu_ripple_view7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:rv_color="@color/colorIconBack"
+            app:rv_rippleDuration="100">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:onClick="onSettingsClicked">
+
+                <cn.edu.hfut.xc.view.ColorImageView
+                    android:id="@+id/activity_menu_color_image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_drawer_setting"
+                    app:src_color="@color/colorIconBack" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings"
+                    android:textColor="@color/colorMenuItemText" />
+            </LinearLayout>
+        </cn.edu.hfut.xc.view.RippleView>
+
+
+        <cn.edu.hfut.xc.view.RippleView
+            android:id="@+id/activity_menu_ripple_view8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:rv_color="@color/colorIconBack"
+            app:rv_rippleDuration="100">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:onClick="onNightClicked">
+
+                <cn.edu.hfut.xc.view.ColorImageView
+                    android:id="@+id/activity_menu_color_image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_drawer_night"
+                    app:src_color="@color/colorIconBack" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/night"
+                    android:textColor="@color/colorMenuItemText" />
+            </LinearLayout>
+        </cn.edu.hfut.xc.view.RippleView>
+    </LinearLayout>
+
+</FrameLayout>

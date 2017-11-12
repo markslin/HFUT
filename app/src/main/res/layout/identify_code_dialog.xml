@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:gravity="center"
+    android:minWidth="200dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/identify_code_tip"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:text="请输入验证码"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <include
+            android:id="@+id/identify_code_line"
+            layout="@layout/view_horizontal_line" />
+
+        <ImageView
+            android:id="@+id/identify_code_image_view"
+            android:layout_width="168dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+        <EditText
+            android:id="@+id/identify_code_edit_text"
+            android:layout_width="168dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@drawable/login_edit_text_edge"
+            android:hint="验证码"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorIconBack" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="168dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="8dp">
+
+        <cn.edu.hfut.xc.view.RippleView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            app:rv_rippleDuration="20">
+
+            <TextView
+                android:id="@+id/positive_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/colorLightGray" />
+        </cn.edu.hfut.xc.view.RippleView>
+
+        <cn.edu.hfut.xc.view.RippleView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            app:rv_rippleDuration="20">
+
+            <TextView
+                android:id="@+id/negative_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/colorLightGray" />
+        </cn.edu.hfut.xc.view.RippleView>
+    </LinearLayout>
+</LinearLayout>

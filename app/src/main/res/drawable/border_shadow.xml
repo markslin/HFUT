@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <item>
+        <shape>
+            <!-- set the shadow color here -->
+            <gradient
+                android:centerColor="@color/colorGray"
+                android:centerX="0.06"
+                android:endColor="@android:color/transparent"
+                android:startColor="@android:color/transparent" />
+            <!-- setting the thickness of shadow (positive value will give shadow on that side) -->
+            <padding android:left="@dimen/border_shadow" />
+        </shape>
+    </item>
+    <!-- Background -->
+    <item>
+        <shape>
+            <solid android:color="#f1f1f1" />
+        </shape>
+    </item>
+</layer-list>

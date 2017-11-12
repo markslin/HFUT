@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="cn.edu.hfut.xc.hfut.SettingsActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_settings_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_height"
+        android:background="@color/colorPrimary">
+
+        <cn.edu.hfut.xc.view.RippleView
+            android:layout_width="@dimen/actionbar_height"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onSettingsBackClicked"
+                android:text="@string/settings"
+                android:textColor="@color/colorLightGray"
+                android:textSize="18sp" />
+        </cn.edu.hfut.xc.view.RippleView>
+
+    </LinearLayout>
+
+    <cn.edu.hfut.xc.view.RippleView
+        android:id="@+id/activity_settings_ripple_view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:rv_color="@color/colorIconBack"
+        app:rv_rippleDuration="100">
+
+        <View
+            android:id="@+id/activity_settings_line1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorIconBack" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="onThemeSettingsClicked"
+            android:text="主题颜色"
+            android:textSize="16sp" />
+    </cn.edu.hfut.xc.view.RippleView>
+
+    <View
+        android:id="@+id/activity_settings_line2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorIconBack" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="center_vertical"
+        android:text="注销"
+        android:textSize="16sp" />
+
+    <cn.edu.hfut.xc.view.RippleView
+        android:id="@+id/activity_settings_ripple_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/colorIconBack"
+        app:rv_rippleDuration="100">
+
+        <View
+            android:id="@+id/activity_settings_line3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorIconBack" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/actionbar_height"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="onLogout1SettingsClicked"
+            android:text="图书馆账号"
+            android:textSize="16sp" />
+    </cn.edu.hfut.xc.view.RippleView>
+
+    <cn.edu.hfut.xc.view.RippleView
+        android:id="@+id/activity_settings_ripple_view3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/colorIconBack"
+        app:rv_rippleDuration="100">
+
+        <View
+            android:id="@+id/activity_settings_line4"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorIconBack" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/actionbar_height"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="onLogout2SettingsClicked"
+            android:text="教务系统账号"
+            android:textSize="16sp" />
+    </cn.edu.hfut.xc.view.RippleView>
+
+    <View
+        android:id="@+id/activity_settings_line5"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorIconBack" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/version_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="版本:v1.0"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="Copyright©2012-2015 孙铭银.All Rights Reserved."
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

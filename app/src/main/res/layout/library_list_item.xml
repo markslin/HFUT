@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:clickable="true"
+    android:gravity="center_vertical"
+    android:minHeight="45dp">
+
+    <LinearLayout
+        android:id="@+id/book_title"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="@drawable/default_theme_rectangle"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/book_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="现代企业管理 / 安景文主编" />
+
+        <TextView
+            android:id="@+id/book_from_end_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2015-09-01至2015-11-30"
+            android:textColor="#878787"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/book_borrow_num"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/default_theme_rectangle"
+        android:gravity="center"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/book_attach"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/default_theme_rectangle"
+        android:gravity="center"
+        android:text="无" />
+
+    <cn.edu.hfut.xc.view.RippleView
+        android:id="@+id/book_ripple_view"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/default_theme_rectangle">
+
+        <TextView
+            android:id="@+id/book_borrow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/renew_round_button"
+            android:gravity="center"
+            android:text="+1"
+            android:textColor="@color/colorLightGray" />
+    </cn.edu.hfut.xc.view.RippleView>
+</LinearLayout>

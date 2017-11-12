@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.edu.hfut.xc.view.ListRippleView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ripple_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:rv_color="@color/colorIconBack"
+    app:rv_rippleDuration="300">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <cn.edu.hfut.xc.view.ColorImageView
+            android:id="@+id/fragment_news_list_view_item_color_image_view"
+            android:layout_width="9.6dp"
+            android:layout_height="12dp"
+            android:src="@drawable/ic_widget_today"
+            android:visibility="gone"
+            app:src_color="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/fragment_news_list_view_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="校区学子在第九届国际大学生iCAN创新创业大赛上喜获佳绩校区学子在第九届国际大学生iCAN创新创业大赛上喜获佳绩"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:text="HFUT-XC"
+            android:textColor="@color/colorSmallText"
+            android:textSize="12sp" />
+
+        <cn.edu.hfut.xc.view.ColorImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_widget_time"
+            app:src_color="@color/colorSmallText" />
+
+        <TextView
+            android:id="@+id/fragment_news_list_view_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:text="1天前"
+            android:textColor="@color/colorSmallText"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</cn.edu.hfut.xc.view.ListRippleView>
