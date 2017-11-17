@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.edu.hfut.xc.utilitis.AESUtils;
+import cn.edu.hfut.xc.utilitis.DeviceInfo;
 import cn.edu.hfut.xc.utilitis.LoginUtil;
 import cn.edu.hfut.xc.view.ColorProgressBar;
 
@@ -33,14 +34,11 @@ public class LoginActivity extends BaseActivity implements LoginUtil.LoginListen
     private ColorProgressBar colorProgressBar;
     private LoginUtil loginUtil;
     private Handler handler;
-    private String simSerialNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        TelephonyManager manager = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
-        simSerialNumber = manager.getSimSerialNumber();
         findViews();
         init();
         handler = new Handler() {
@@ -52,10 +50,11 @@ public class LoginActivity extends BaseActivity implements LoginUtil.LoginListen
                         break;
                     case LOGIN_SUCCESS:
                         colorProgressBar.setVisibility(View.INVISIBLE);
+                        String deviceId= DeviceInfo.getDeviceId(LoginActivity.this);
                         SharedPreferences sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("USERNAME", AESUtils.encrypt(simSerialNumber, userName.getText().toString()));
-                        editor.putString("PASSWORD", AESUtils.encrypt(simSerialNumber, passWord.getText().toString()));
+                        editor.putString("USERNAME", AESUtils.encrypt(deviceId, userName.getText().toString()));
+                        editor.putString("PASSWORD", AESUtils.encrypt(deviceId, passWord.getText().toString()));
                         editor.commit();
                         Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                         setResult(RESULT_OK);

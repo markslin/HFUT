@@ -2,7 +2,6 @@ package cn.edu.hfut.xc.hfut;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -13,7 +12,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -26,6 +24,7 @@ import cn.edu.hfut.xc.fragment.NewsFragment;
 import cn.edu.hfut.xc.fragment.ScoreFragment;
 import cn.edu.hfut.xc.fragment.TableFragment;
 import cn.edu.hfut.xc.utilitis.AESUtils;
+import cn.edu.hfut.xc.utilitis.DeviceInfo;
 import cn.edu.hfut.xc.utilitis.SystemBarTintManager;
 import cn.edu.hfut.xc.view.CircleImageView;
 import cn.edu.hfut.xc.view.ColorImageView;
@@ -48,16 +47,14 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
     private Handler handler;
     private int MENU = 0;
     private int CURRENT_MENU = 1;
-    private String simSerialNumber;
     private String userName, passWord;
     private String libUserName, libPassWord;
     private SystemBarTintManager mTintManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TelephonyManager manager = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
-        simSerialNumber = manager.getSimSerialNumber();
         findViews();
         init();
         SharedPreferences sharedPreferences = getSharedPreferences("config", MODE_PRIVATE);
@@ -84,7 +81,7 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         indicator.setImageDrawable(drawerArrowDrawable);
         try {
             SharedPreferences sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
-            Bitmap bitmap = BitmapFactory.decodeFile(getCacheDir() + "/" + AESUtils.decrypt(simSerialNumber, sharedPreferences.getString("USERNAME", null)) + ".jpg");
+            Bitmap bitmap = BitmapFactory.decodeFile(getCacheDir() + "/" + AESUtils.decrypt(DeviceInfo.getDeviceId(this), sharedPreferences.getString("USERNAME", null)) + ".jpg");
             if (bitmap != null)
                 headImage.setImageBitmap(bitmap);
         } catch (Exception e) {
@@ -207,8 +204,9 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         SharedPreferences sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
         userName = sharedPreferences.getString("USERNAME", null);
         passWord = sharedPreferences.getString("PASSWORD", null);
-        userName = AESUtils.decrypt(simSerialNumber, userName);
-        passWord = AESUtils.decrypt(simSerialNumber, passWord);
+        String deviceId = DeviceInfo.getDeviceId(this);
+        userName = AESUtils.decrypt(deviceId, userName);
+        passWord = AESUtils.decrypt(deviceId, passWord);
         if (userName == null || passWord == null)
             return false;
         else {
@@ -220,8 +218,9 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         SharedPreferences sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
         libUserName = sharedPreferences.getString("LIB_USERNAME", null);
         libPassWord = sharedPreferences.getString("LIB_PASSWORD", null);
-        libUserName = AESUtils.decrypt(simSerialNumber, libUserName);
-        libPassWord = AESUtils.decrypt(simSerialNumber, libPassWord);
+        String deviceId = DeviceInfo.getDeviceId(this);
+        libUserName = AESUtils.decrypt(deviceId, libUserName);
+        libPassWord = AESUtils.decrypt(deviceId, libPassWord);
         if (libUserName == null || libPassWord == null)
             return false;
         else {

@@ -1,6 +1,5 @@
 package cn.edu.hfut.xc.hfut;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -9,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -17,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.edu.hfut.xc.utilitis.AESUtils;
+import cn.edu.hfut.xc.utilitis.DeviceInfo;
 import cn.edu.hfut.xc.utilitis.LibraryLoginUtil;
 import cn.edu.hfut.xc.view.ColorProgressBar;
 
@@ -33,14 +32,11 @@ public class LibraryLoginActivity extends BaseActivity implements LibraryLoginUt
     private ColorProgressBar colorProgressBar;
     private LibraryLoginUtil loginUtil;
     private Handler handler;
-    private String simSerialNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_library);
-        TelephonyManager manager = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
-        simSerialNumber = manager.getSimSerialNumber();
         findViews();
         init();
         handler = new Handler() {
@@ -52,10 +48,11 @@ public class LibraryLoginActivity extends BaseActivity implements LibraryLoginUt
                         break;
                     case LOGIN_SUCCESS:
                         colorProgressBar.setVisibility(View.INVISIBLE);
+                        String deviceId = DeviceInfo.getDeviceId(LibraryLoginActivity.this);
                         SharedPreferences sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("LIB_USERNAME", AESUtils.encrypt(simSerialNumber, userName.getText().toString()));
-                        editor.putString("LIB_PASSWORD", AESUtils.encrypt(simSerialNumber, passWord.getText().toString()));
+                        editor.putString("LIB_USERNAME", AESUtils.encrypt(deviceId, userName.getText().toString()));
+                        editor.putString("LIB_PASSWORD", AESUtils.encrypt(deviceId, passWord.getText().toString()));
                         editor.commit();
                         Toast.makeText(LibraryLoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                         setResult(RESULT_OK);

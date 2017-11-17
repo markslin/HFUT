@@ -127,6 +127,7 @@ public class ListRippleView extends LinearLayout {
                 timer = 0;
                 durationEmpty = -1;
                 timerEmpty = 0;
+                canvas.save();
                 canvas.restore();
                 invalidate();
                 return;
